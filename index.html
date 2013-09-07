@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head><title>Pizza Carry</title></head>
+<style type="text/css" media="screen">
+  body {
+    background: url("main.gif");
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  #screen {
+    background: #222;
+    opacity: .80;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  #screen h1 {
+    color: #222;
+    font-family: Arial;
+    background: #ddd;
+    border-radius: 2em;
+    padding: .5em;
+    width: 10em;
+    margin: 2em auto;
+    text-align: center;
+  }
+</style>
+<body>
+  <div id="screen">
+    <h1>Touch for music</h1>
+  </div>
+  <audio src="main.mp3">
+  <script type="text/javascript" charset="utf-8">
+    var audio = document.getElementsByTagName('audio')[0];
+    var screen = document.getElementById('screen');
+    document.body.onmousedown = function() {
+      if (screen.style.display == 'none') {
+        audio.pause();
+        screen.style.display = '';
+      } else {
+        audio.play();
+        screen.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
